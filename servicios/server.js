@@ -8,15 +8,8 @@ app.get("/",(req, res)=>{
 	console.log(req);
 	res.json({mensaje:"Hola mundo y aprogramo en node "})
 });
+require("../servicios/rutas.js");
 
 app.listen(1111, ()=>{
 	console.log("Servidor Iniciado");
 });
-app.get("/Hola/es",(req,res)=>{
-console.log(req);
-res.json({mensaje:"Hola Mundo"})
-
-});
-app.get("/Hola/en",(req,res)=>{
-console.log(req);
-res.json({mensaje:"Hello world"})
