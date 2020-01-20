@@ -8,8 +8,7 @@ app.get("/",(req, res)=>{
 	console.log(req);
 	res.json({mensaje:"Hola mundo y aprogramo en node "})
 });
-require("../servicios/rutas.js");
+require("./servicios/rutas.js")(app);
 
-app.listen(1111, ()=>{
 	console.log("Servidor Iniciado");
 });

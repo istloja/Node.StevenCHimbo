@@ -1,5 +1,5 @@
 const msql = require("msql");
-const configuraciones=require("../ configuraciones/base de datos.js");
+const configuraciones=require("../ configuraciones/db.config.js");
 const conexion =mysql.create.createconnexion({
 	host : "configuraciones.host",
 	User:"configuraciones.User"
