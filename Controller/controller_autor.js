@@ -9,7 +9,7 @@ exports.obtenerAutor = (req, res) => {
         res.send(data);
     });
 }
-exports.crearNuevoAutor=(req,res) => {
+exports.crearNuevoAutor=(req,res) => {// Controlador para crear nuevo autor
   const nuevoAutor = new Autor({
     id_autor: req.body.id_autor,
     nombreAutor: req.body.nombre_autor
