@@ -33,6 +33,21 @@ exports.eliminarAutor=(req,res)=>{ // Controlador para crear nuevo autor
     }else{
     res.send(data);
     }
-
 });
 }
+exports.editarAutor = (req,res)=>{//COntrolador para editar Autor
+  const idAutor = req.body.id_autor;
+  const editarAutor = new autor(req.body);
+
+  autor.editarAutor(idAutor,editarAutor,(error,data) => {
+    if (error) {
+      if(error.kind == 'not_found'){
+        res.status(400).json({ mensaje: 'No se encontro el libro' });
+      }else{
+          res.status(500).json({ mensaje: 'Ocurrio un error al editar el Autor' });
+      }
+    }else{
+      res.send(data);
+      }
+  });
+};

@@ -37,5 +37,19 @@ autor.eliminarAutor =(borrarAutor,result)=>{
         }
     });
 }
+autor.editarAutor= (idAutor,editarAutor,result)=>{
+  connect.query("UPDATE Autor SET id_autor =?  where id_autor =?",[editarAutor.idAutor,idAutor],(error,res)=>{
+    if(error){
+        console.log(error,"error al editar Autor");
+        result(null,error);
+        return;
+    }else{
+      if(res.affectedRows=0){
+        result({kind:"not_found"},null);
+      }
+        result(null,res);
+    }
+  });
+}
 
 module.exports=autor;
